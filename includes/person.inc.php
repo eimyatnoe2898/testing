@@ -10,7 +10,7 @@ class Person
 
     // public $first = "Daniel";
 
-    public function __construct($name, $eyeCgit olor, $age)
+    public function __construct($name, $eyeColor, $age)
     {
         $this->name = $name;
         $this->eyeColor = $eyeColor;
