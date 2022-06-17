@@ -1,5 +1,8 @@
 <?php
-    include "includes/person.inc.php";
+    // include "includes/person.inc.php";
+    declare(strict_types = 1);
+    include 'includes/autoloader.inc.php';
+    
 
 ?>
 <!DOCTYPE html>
@@ -23,8 +26,17 @@
         $eyeColor = "Blue";
         $age = 24;
         $person1 = new Person($name, $eyeColor, $age);
-        $person1->setName($name);
-        echo $person1->first;
+        // $person1 = new Person(22, $eyeColor, $age);
+
+        try{
+            $person1->setName("Aung");
+        }
+        catch(TypeError $e)
+        {
+            echo "Error: ". $e->getMessage();
+        }
+
+        echo $person1->getName();
 
         $pet1name = "Kiki";
         $pet1 = new Pet($pet1name, $person1 );
